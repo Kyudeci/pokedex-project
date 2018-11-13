@@ -1,12 +1,43 @@
+html{
+  background: url(rotomdex.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+}
+body{
+  margin: 0;
+}
 #header {
   height: 100px;
   background-color: rgba(37, 71, 196, 0.8);
   font-size: 50px;
-  margin: 0;
+  position: sticky;
 }
 #label {
   position: fixed;
   line-height: 1px;
   font-weight: 600;
   color: #FBB13C;
+  margin-left: 5px
   }
+#pbody {
+border-style: solid;
+width: 300px;
+height: 300px;
+position: absolute;
+margin: -50px 0 0 -50px;
+left: 50%;
+top: 37%;
+background: linear-gradient(to bottom, rgb(255,0,0) 50%, rgba(0,0,0,1) , rgb(0,0,0), rgb(255,255,255) 50%);
+border-radius: 50%;
+}
+#button {
+  border-style: solid;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 60%;
+  top: 61%;
+  background: white;
+  border-radius: 50%;
+}
