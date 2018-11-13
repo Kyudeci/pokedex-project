@@ -1,0 +1,12 @@
+#header {
+  height: 100px;
+  background-color: rgba(37, 71, 196, 0.8);
+  font-size: 50px;
+  margin: 0;
+}
+#label {
+  position: fixed;
+  line-height: 1px;
+  font-weight: 600;
+  color: #FBB13C;
+  }
