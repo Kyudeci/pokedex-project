@@ -41,3 +41,8 @@ border-radius: 50%;
   background: white;
   border-radius: 50%;
 }
+.shake {
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
