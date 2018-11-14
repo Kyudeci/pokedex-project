@@ -33,6 +33,7 @@ transform-origin: center bottom
 }
 #button {
   border: solid thick;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   position: absolute;
@@ -40,7 +41,6 @@ transform-origin: center bottom
   left: 58%;
   top: 57%;
   background: white;
-  border-radius: 50%;
   cursor: pointer;
 }
 .button {
@@ -50,7 +50,7 @@ transform-origin: center bottom
   cursor: pointer;
   outline: none;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: black;
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
@@ -58,9 +58,10 @@ transform-origin: center bottom
   margin: -50px 0 0 -50px;
   left: 56%;
   top: 95%;
+  visibility: hidden;
 }
 .button:active {
-  background-color: #3e8e41;
+  background-color: grey;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
