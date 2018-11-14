@@ -17,20 +17,29 @@ body{
   line-height: 1px;
   font-weight: 600;
   color: #FBB13C;
-  margin-left: 5px
+  margin-left: 5px;
 }
-/*Create pokéball */
+#new {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 30%;
+  top: 25%;
+  transform-origin: center bottom;
+}
+/* Create pokéball
 #pbody {
-border: solid thick;
-border-radius: 50%;
-width: 350px;
-height: 350px;
-position: absolute;
-margin: -50px 0 0 -50px;
-left: 47%;
-top: 37%;
-background: linear-gradient(to bottom, rgb(255,0,0) 50%, rgba(0,0,0,1) , rgb(0,0,0), rgb(255,255,255) 50%);
-transform-origin: center bottom;
+  border: solid thick;
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 47%;
+  top: 35%;
+  background: linear-gradient(to bottom, rgb(255,0,0) 50%, rgba(0,0,0,1) , rgb(0,0,0), rgb(255,255,255) 50%);
+  transform-origin: center bottom;
 }
 #button {
   border: solid thick;
@@ -43,7 +52,7 @@ transform-origin: center bottom;
   top: 57%;
   background: white;
   cursor: pointer;
-}
+} */
 .button {
   padding: 15px 25px;
   font-size: 24px;
@@ -69,12 +78,24 @@ transform-origin: center bottom;
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
 @keyframes shake {
-  0% {transform: rotate(0);}
-  10% {transform: rotate(-15deg);}
-  20% {transform: rotate(15deg);}
-  30% {transform: rotate(-15deg);}
-  50% {transform: rotate(0);}
-  100% {transform: rotate(0);}
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 .shake {
   -webkit-animation-name: shake;

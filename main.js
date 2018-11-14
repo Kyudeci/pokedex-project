@@ -1,12 +1,12 @@
 let button = document.getElementById("button")
-let ball = document.getElementById("pbody")
+let ball = document.getElementById("new")
 
 function shake(){
   ball.classList.add("shake")
   document.getElementById("return").style.visibility = "visible"
 }
 
-button.addEventListener("click", shake);
+ball.addEventListener("click", shake);
 
 
 class Pokemon {
