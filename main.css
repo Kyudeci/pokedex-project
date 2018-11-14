@@ -20,29 +20,73 @@ body{
   margin-left: 5px
   }
 #pbody {
-border-style: solid;
-width: 300px;
-height: 300px;
+border: solid thick;
+border-radius: 50%;
+width: 350px;
+height: 350px;
 position: absolute;
 margin: -50px 0 0 -50px;
-left: 50%;
+left: 47%;
 top: 37%;
 background: linear-gradient(to bottom, rgb(255,0,0) 50%, rgba(0,0,0,1) , rgb(0,0,0), rgb(255,255,255) 50%);
-border-radius: 50%;
+transform-origin: center bottom
 }
 #button {
-  border-style: solid;
-  width: 30px;
-  height: 30px;
+  border: solid thick;
+  width: 40px;
+  height: 40px;
   position: absolute;
   margin: -50px 0 0 -50px;
-  left: 60%;
-  top: 61%;
+  left: 58%;
+  top: 57%;
   background: white;
   border-radius: 50%;
+  cursor: pointer;
+}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 56%;
+  top: 95%;
+}
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* https://codepen.io/jocchann/pen/MyxedP
+Snippet by Joanna Chan */
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 .shake {
-  animation-duration: 3s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
+  -webkit-animation-name: shake;
+  animation: shake 1s 3 2s;
 }

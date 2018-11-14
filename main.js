@@ -1,8 +1,8 @@
-let button = getElementById("button")
-let ball = getElementById("pokeball")
+let button = document.getElementById("button")
+let ball = document.getElementById("pbody")
 
 function shake(){
-  ball.addClass('animated shake')
+  ball.classList.add("shake")
 }
 
 button.addEventListener("click", shake)
