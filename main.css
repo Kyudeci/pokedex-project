@@ -1,40 +1,37 @@
-html{
+html {
   background: url(rotomdex.jpg) no-repeat center center fixed;
   background-size: cover;
 }
-}
-body{
+body {
   margin: 0;
 }
-#header {
-  height: 100px;
-  background-color: rgba(37, 71, 196, 0.8);
-  font-size: 50px;
-  position: sticky;
-}
 #label {
-  position: fixed;
-  line-height: 1px;
+  position: relative;
   font-weight: 600;
   color: #FBB13C;
-  margin-left: 5px;
+  text-align: center;
+  background-color: rgba(1,23,255,0.8);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 0;
 }
 #new {
-  width: 500px;
-  height: 500px;
-  position: absolute;
+  width: 520px;
+  height: 520px;
+  position: fixed;
   margin: -50px 0 0 -50px;
-  left: 30%;
-  top: 25%;
+  left: 40%;
+  top: 20%;
   transform-origin: center bottom;
 }
+
 /* Create pokéball
 #pbody {
   border: solid thick;
   border-radius: 50%;
   width: 350px;
   height: 350px;
-  position: absolute;
+  position: relative;
   margin: -50px 0 0 -50px;
   left: 47%;
   top: 35%;
@@ -53,6 +50,8 @@ body{
   background: white;
   cursor: pointer;
 } */
+
+/* Return button */
 .button {
   padding: 15px 25px;
   font-size: 24px;
@@ -66,8 +65,8 @@ body{
   box-shadow: 0 9px #999;
   position: absolute;
   margin: -50px 0 0 -50px;
-  left: 56%;
-  top: 95%;
+  left: 53.5%;
+  top: 83%;
   visibility: hidden;
 }
 .button:active {
@@ -75,29 +74,40 @@ body{
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+#display {
+  position: fixed;
+  margin: -50px 0 0 -50px;
+  left: 40%;
+  top: 90%;;
+}
+#box {
+  border: solid thick;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  margin: auto;
+  margin-top: 175px;
+  background-color: white;
+}
+#adjust {
+  height: 175px;
+  padding-left: 50px;
+  padding-top: 50px
+}
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
 @keyframes shake {
-  0% {
-    transform: rotate(0);
-  }
-  10% {
-    transform: rotate(-15deg);
-  }
-  20% {
-    transform: rotate(15deg);
-  }
-  30% {
-    transform: rotate(-15deg);
-  }
-  50% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(0);
-  }
+  0% {transform: rotate(0);}
+  10% {transform: rotate(-10deg);}
+  20% {transform: rotate(10deg);}
+  30% {transform: rotate(-10deg);}
+  50% {transform: rotate(0);}
+  100% {transform: rotate(0);}
 }
 .shake {
   -webkit-animation-name: shake;
   animation: shake 1s 3 2s;
+}
+@@keyframes appear {
+  0%
 }
