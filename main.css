@@ -65,8 +65,8 @@ body {
   box-shadow: 0 9px #999;
   position: absolute;
   margin: -50px 0 0 -50px;
-  left: 53.5%;
-  top: 83%;
+  left: 53%;
+  top: 80%;
   visibility: hidden;
 }
 .button:active {
@@ -77,8 +77,9 @@ body {
 #display {
   position: fixed;
   margin: -50px 0 0 -50px;
-  left: 40%;
-  top: 90%;;
+  left: 40.5%;
+  top: 60%;
+  opacity: 0;
 }
 #box {
   border: solid thick;
@@ -90,9 +91,8 @@ body {
   background-color: white;
 }
 #adjust {
-  height: 175px;
-  padding-left: 50px;
-  padding-top: 50px
+  height: 300px;
+  padding: 25px;
 }
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
@@ -106,8 +106,16 @@ Snippet by Joanna Chan */
 }
 .shake {
   -webkit-animation-name: shake;
-  animation: shake 1s 3 2s;
+  animation: shake 1s 3;
 }
-@@keyframes appear {
-  0%
+@keyframes appear {
+  0% {opacity: 0}
+  0% {transform: translateY(0);}
+  100% {transform: translateY(200px);}
+  100% {opacity: 1}
+}
+.appear {
+  -webkit-animation-name: appear;
+  animation: appear 1s 2s forwards;
+
 }
