@@ -104,6 +104,10 @@ body {
   height: 250px;
   padding: 50px;
 }
+#gen7 {
+  height: 250px;
+  padding: 50px;
+}
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
 @keyframes shake {
