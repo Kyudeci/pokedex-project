@@ -65,8 +65,8 @@ body {
   box-shadow: 0 9px #999;
   position: absolute;
   margin: -50px 0 0 -50px;
-  left: 53%;
-  top: 80%;
+  left: 53.5%;
+  top: 85%;
   visibility: hidden;
 }
 .button:active {
@@ -77,7 +77,7 @@ body {
 #display {
   position: fixed;
   margin: -50px 0 0 -50px;
-  left: 40.5%;
+  left: 40%;
   top: 60%;
   opacity: 0;
 }
@@ -90,9 +90,19 @@ body {
   margin-top: 175px;
   background-color: white;
 }
+#box2 {
+  border: solid thick;
+  width: 300px;
+  height: 350px;
+  position: absolute;
+  margin: auto;
+  margin-top: 175px;
+  background-color: white;
+  right: 0;
+}
 #adjust {
-  height: 300px;
-  padding: 25px;
+  height: 250px;
+  padding: 50px;
 }
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
@@ -117,5 +127,8 @@ Snippet by Joanna Chan */
 .appear {
   -webkit-animation-name: appear;
   animation: appear 1s 2s forwards;
+
+}
+@media  {
 
 }
