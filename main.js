@@ -27,18 +27,26 @@ ball.addEventListener("click", shake);
 // response.data.
 
 class Pokemon {
-  constructor(name) {
+  constructor(name, id) {
     this.name = name;
     this.id = id;
-    this.hp = hp;
-    this.attack = attack;
-    this.defense = defense;
-    this.abilities = abilities;
-    this.sprite = sprite;
+    // this.hp = hp;
+    // this.attack = attack;
+    // this.defense = defense;
+    // this.abilities = abilities;
+    // this.sprite = sprite;
   }
-    if (response.data.id > 721) {
-      "https://www.pkparaiso.com/imagenes/sol-luna/sprites/animados/" + response.data.id + ".gif"
+  sprites(id) {
+    let src = document.getElementById('adjust')
+    let box = document.getElementById("box")
+    src.id = "adjust"
+    box.appendChild(src)
+    if (id > 721) {
+      src.src = "https://www.pkparaiso.com/imagenes/sol-luna/sprites/animados/wishiwashi.gif";
+    } else {
+      src.src= "http://www.pkparaiso.com/imagenes/xy/sprites/animados/swirlix.gif"
     }
+  }
 }
 class Trainer {
   constructor() {
@@ -50,4 +58,7 @@ class Trainer {
   get(name){
 
   }
+}
+function pokemonName() {
+  sprites(id)
 }
