@@ -11,41 +11,40 @@ function shake(){
 ball.addEventListener("click", shake);
 
 // // Make the call
-// function display() {
-//   let x = 5
-//   axios.get("http://fizal.me/pokeapi/api/v2/id/"+ x +".json")
-//   .then(function (response) {
-//   console.log(response);
-// })
-// .catch(function (error) {
-//   console.log(error);
-// })
-// .then(function () {
-// });
-// }
-
-// response.data.
+function display() {
+  let x = Math.floor(Math.random() * 802) + 1
+  axios.get("http://fizal.me/pokeapi/api/v2/id/"+ x +".json")
+  .then(function (response) {
+  console.log(response);
+  let somePokemon = new Pokemon(x, response.data.name);
+  somePokemon.sprites()
+})
+}
 
 class Pokemon {
-  constructor(name, id) {
+  constructor(id,name) {
     this.name = name;
     this.id = id;
-    // this.hp = hp;
-    // this.attack = attack;
-    // this.defense = defense;
-    // this.abilities = abilities;
-    // this.sprite = sprite;
+    this.hp = hp;
+    this.attack = attack;
+    this.defense = defense;
+    this.abilities = abilities;
+    this.sprite = this.name;
   }
-  sprites(id) {
+  sprites() {
     let src = document.getElementById('adjust')
     let box = document.getElementById("box")
     src.id = "adjust"
     box.appendChild(src)
-    if (id > 721) {
-      src.src = "https://www.pkparaiso.com/imagenes/sol-luna/sprites/animados/wishiwashi.gif";
+    //Appear the sprite that leads to the future.
+    if (this.id > 721) {
+      src.src = "https://www.pkparaiso.com/imagenes/sol-luna/sprites/animados/"+ this.sprite +".gif";
     } else {
-      src.src= "http://www.pkparaiso.com/imagenes/xy/sprites/animados/swirlix.gif"
+      src.src= "http://www.pkparaiso.com/imagenes/xy/sprites/animados/"+ this.sprite +".gif"
     }
+  }
+  stats() {
+
   }
 }
 class Trainer {
@@ -58,7 +57,4 @@ class Trainer {
   get(name){
 
   }
-}
-function pokemonName() {
-  sprites(id)
 }
