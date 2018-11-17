@@ -101,8 +101,10 @@ body {
   right: 0;
 }
 #adjust {
-  height: 250px;
-  padding: 50px;
+  width: 200px;
+  height: 300px;
+  padding: 75px;
+  padding-top: 25px;
 }
 #gen7 {
   height: 250px;
