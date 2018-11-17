@@ -90,6 +90,12 @@ body {
   margin-top: 175px;
   background-color: white;
 }
+#adjust {
+  width: 200px;
+  height: 300px;
+  padding: 75px;
+  padding-top: 25px;
+}
 #box2 {
   border: solid thick;
   width: 300px;
@@ -100,11 +106,10 @@ body {
   background-color: white;
   right: 0;
 }
-#adjust {
-  width: 200px;
-  height: 300px;
-  padding: 75px;
-  padding-top: 25px;
+li {
+  line-height: 50px;
+  list-style-type: none;
+  text-transform: capitalize;
 }
 #gen7 {
   height: 250px;

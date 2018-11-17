@@ -65,13 +65,26 @@ class Pokemon {
   stats() {
     let li = document.createElement("li");
     let ul = document.getElementById("data");
-    let stat = [("HP: " + this.hp),  (" Attack: " + this.attack), (" Defense: " + this.defense), (" Abilities: " + this.abilities)];
+    let nombre = document.createTextNode("Name: " + this.name)
+    let health = document.createTextNode("HP: " + this.hp)
+    let atk = document.createTextNode("Attack: " + this.attack)
+    let def = document.createTextNode("Defense: " + this.defense)
+    let abi = document.createTextNode("Ability: " + this.abilities)
+    let br = document.createElement("br")
+    let br2 = document.createElement("br")
+    let br3 = document.createElement("br")
+    let br4 = document.createElement("br")
     ul.innerHTML = ""
-    for (var i = 0; i < stat.length; i++) {
-      let textContent = document.createTextNode(stat[i])
-      li.appendChild(textContent)
-      ul.appendChild(li)
-    }
+    ul.appendChild(li)
+    li.appendChild(nombre)
+    li.appendChild(br)
+    li.appendChild(health)
+    li.appendChild(br2)
+    li.appendChild(atk)
+    li.appendChild(br3)
+    li.appendChild(def)
+    li.appendChild(br4)
+    li.appendChild(abi)
   }
 }
 class Trainer {
