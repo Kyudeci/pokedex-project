@@ -78,7 +78,11 @@ class Pokemon {
     let br2 = document.createElement("br")
     let br3 = document.createElement("br")
     let br4 = document.createElement("br")
+<<<<<<< HEAD
     let surge = this.abilities;
+=======
+    // let surge = this.abilities;
+>>>>>>> bcb464fdfc2f78935d2c98a9716143ff5ddac632
     ul.innerHTML = ""
     ul.appendChild(li)
     li.appendChild(nombre)
