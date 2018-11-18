@@ -110,6 +110,7 @@ li {
   line-height: 50px;
   list-style-type: none;
   text-transform: capitalize;
+  text-align: center;
 }
 #gen7 {
   height: 250px;
