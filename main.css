@@ -24,34 +24,7 @@ body {
   top: 20%;
   transform-origin: center bottom;
 }
-
-/* Create pokéball
-#pbody {
-  border: solid thick;
-  border-radius: 50%;
-  width: 350px;
-  height: 350px;
-  position: relative;
-  margin: -50px 0 0 -50px;
-  left: 47%;
-  top: 35%;
-  background: linear-gradient(to bottom, rgb(255,0,0) 50%, rgba(0,0,0,1) , rgb(0,0,0), rgb(255,255,255) 50%);
-  transform-origin: center bottom;
-}
-#button {
-  border: solid thick;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  margin: -50px 0 0 -50px;
-  left: 58%;
-  top: 57%;
-  background: white;
-  cursor: pointer;
-} */
-
-/* Return button */
+/* Randomize button */
 .button {
   padding: 15px 25px;
   font-size: 24px;
@@ -91,10 +64,12 @@ body {
   background-color: white;
 }
 #adjust {
-  width: 200px;
+  width: 80%;
   height: 300px;
   padding: 75px;
   padding-top: 25px;
+  padding-right: 0px;
+  padding-left: 25px;
 }
 #box2 {
   border: solid thick;
@@ -107,7 +82,7 @@ body {
   right: 0;
 }
 li {
-  line-height: 50px;
+  line-height: 30px;
   list-style-type: none;
   text-transform: capitalize;
   text-align: center;
