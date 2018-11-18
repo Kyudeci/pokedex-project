@@ -21,11 +21,10 @@ basic1.addEventListener("click", display);
 // // Make the call
 function display() {
   let x = Math.floor(Math.random() * 802) + 1
-  let y = Math.floor(Math.random() * 1)
   axios.get("http://fizal.me/pokeapi/api/v2/id/"+ x +".json")
   .then(function (response) {
-  console.log(response);
-  let somePokemon = new Pokemon(x, response.data.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[y].ability.name);
+  console.log(response.data);
+  let somePokemon = new Pokemon(x, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.abilities[2].ability.name, response.data.abilities[1].ability.name, response.data.abilities[0].ability.name, response.data.abilities);
   somePokemon.sprites()
   somePokemon.stats()
 })
@@ -41,13 +40,16 @@ function display() {
 // }
 
 class Pokemon {
-  constructor(id, name, hp, attack, defense, abilities) {
+  constructor(id, name, hp, attack, defense, ability1, ability2, ability3, abilities) {
     this.name = name;
     this.id = id;
     this.hp = hp;
     this.attack = attack;
     this.defense = defense;
-    this.abilities = abilities;
+    this.abilities = abilities
+    this.ability1 = ability1;
+    this.ability2 = ability2;
+    this.ability3 = ability3;
     this.sprite = this.name;
   }
   sprites() {
@@ -69,11 +71,14 @@ class Pokemon {
     let health = document.createTextNode("HP: " + this.hp)
     let atk = document.createTextNode("Attack: " + this.attack)
     let def = document.createTextNode("Defense: " + this.defense)
-    let abi = document.createTextNode("Ability: " + this.abilities)
+    let abi = document.createTextNode("Ability: " + this.ability1 + ", " + this.ability2 + ", " + this.ability3)
+    let abi2 = document.createTextNode("Ability: " + this.ability2 + ", " + this.ability3)
+    let abi3 = document.createTextNode("Ability: " + this.ability3)
     let br = document.createElement("br")
     let br2 = document.createElement("br")
     let br3 = document.createElement("br")
     let br4 = document.createElement("br")
+    // let surge = this.abilities;
     ul.innerHTML = ""
     ul.appendChild(li)
     li.appendChild(nombre)
@@ -84,7 +89,15 @@ class Pokemon {
     li.appendChild(br3)
     li.appendChild(def)
     li.appendChild(br4)
-    li.appendChild(abi)
+    for (var i = 0; i <= surge.length; i++) {
+      if (surge.length == 3) {
+          li.appendChild(abi)
+        } else if (surge.length == 2) {
+            li.appendChild(abi2)
+          } else {
+              li.appendChild(abi3)
+            }
+    }
   }
 }
 class Trainer {
