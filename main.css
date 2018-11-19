@@ -24,6 +24,9 @@ body {
   top: 20%;
   transform-origin: center bottom;
 }
+#color {
+  
+}
 /* Randomize button */
 .button {
   padding: 15px 25px;
