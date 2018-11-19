@@ -93,7 +93,7 @@ li {
 }
 /* https://codepen.io/jocchann/pen/MyxedP
 Snippet by Joanna Chan */
-@keyframes shake {
+/* @keyframes shake {
   0% {transform: rotate(0);}
   10% {transform: rotate(-10deg);}
   20% {transform: rotate(10deg);}
@@ -104,7 +104,7 @@ Snippet by Joanna Chan */
 .shake {
   -webkit-animation-name: shake;
   animation: shake 1s 3;
-}
+} */
 @keyframes appear {
   0% {opacity: 0}
   0% {transform: translateY(0);}
@@ -113,7 +113,7 @@ Snippet by Joanna Chan */
 }
 .appear {
   -webkit-animation-name: appear;
-  animation: appear 1s 2s forwards;
+  animation: appear 1s forwards;
 
 }
 @media  {

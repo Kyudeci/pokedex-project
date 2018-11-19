@@ -1,16 +1,18 @@
-let button = document.getElementById("return")
+let button = document.getElementById("random")
 let ball = document.getElementById("new")
-let triple = document.getElementById("display")
+let tripleball = document.getElementById("display")
+let box1 = document.getElementById("box")
+let zoro = document.getElementById('adjust')
 
 let basic1 = document.getElementById("pkmn1")
 let basic2 = document.getElementById("pkmn2")
 let basic3 = document.getElementById("pkmn3")
 
-
 function shake(){
-  ball.classList.add("shake")
-  document.getElementById("return").style.visibility = "visible"
-  triple.classList.add("appear")
+  // ball.classList.add("shake")
+  document.getElementById("random").style.visibility = "visible"
+  tripleball.classList.add("appear")
+  ball.src = "masterball-open.png"
 }
 function ani() {
   basic1.src = "pokeball-ani.gif"
@@ -33,13 +35,13 @@ function nanic() {
 // Events
 ball.addEventListener("click", shake);
 button.addEventListener("click", display);
-// basic1.addEventListener("click", choice1);
+basic1.addEventListener("click", zoroark);
 basic1.addEventListener("mouseover", ani);
 basic1.addEventListener("mouseout", nani);
-basic2.addEventListener("click", choice2);
+basic2.addEventListener("click", lugia);
 basic2.addEventListener("mouseover", anib);
 basic2.addEventListener("mouseout", nanib);
-// basic3.addEventListener("click", choice3);
+basic3.addEventListener("click", kartana);
 basic3.addEventListener("mouseover", anic);
 basic3.addEventListener("mouseout", nanic);
 
@@ -53,8 +55,19 @@ function display() {
   somePokemon.sprites()
   somePokemon.stats()
 })
+box1.style.background = "white"
 }
-function choice2() {
+function zoroark() {
+  axios.get("http://fizal.me/pokeapi/api/v2/id/571.json")
+  .then(function (response) {
+  console.log(response.data);
+  let somePokemon1 = new Pokemon(571, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
+  somePokemon1.sprites()
+  somePokemon1.stats()
+})
+box1.style.background = "black url('dark.gif') no-repeat center center"
+}
+function lugia() {
   axios.get("http://fizal.me/pokeapi/api/v2/id/249.json")
   .then(function (response) {
   console.log(response.data);
@@ -62,8 +75,18 @@ function choice2() {
   somePokemon1.sprites()
   somePokemon1.stats()
 })
+box1.style.background = "url('water.gif')"
 }
-
+function kartana() {
+  axios.get("http://fizal.me/pokeapi/api/v2/id/798.json")
+  .then(function (response) {
+  console.log(response.data);
+  let somePokemon1 = new Pokemon(798, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
+  somePokemon1.sprites()
+  somePokemon1.stats()
+})
+box1.style.background = "pink url('ultforest.jpg') no-repeat center center"
+}
 class Pokemon {
   constructor(id, name, hp, attack, defense, spatk, spdef, speed, abilities) {
     this.name = name;
@@ -114,7 +137,7 @@ class Pokemon {
     let br5 = document.createElement("br")
     let br6 = document.createElement("br")
     let br7 = document.createElement("br")
-    let surge = this.abilities;
+    // let surge = this.abilities;
     ul.innerHTML = ""
     ul.appendChild(li)
     li.appendChild(nombre)
@@ -147,3 +170,6 @@ class Trainer {
 
   }
 }
+
+// Create search bar-- input
+// Secret codes, unsure if will make into final
