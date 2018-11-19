@@ -3,6 +3,8 @@ let ball = document.getElementById("new")
 let tripleball = document.getElementById("display")
 let box1 = document.getElementById("box")
 let zoro = document.getElementById('adjust')
+let input = document.querySelector('input');
+let ovr = document.querySelector("html")
 
 let basic1 = document.getElementById("pkmn1")
 let basic2 = document.getElementById("pkmn2")
@@ -32,6 +34,18 @@ function nanib() {
 function nanic() {
   basic3.src = "beastball.png"
 }
+function xyz() {
+  if (input.value == "solgaleo") {
+    box1.style.background = "url('sol2.png') no-repeat center center"
+    ovr.style.background = "#99badd url(alola.jpg) no-repeat center center fixed"
+  } else if (input.value == "lunala") {
+    box1.style.background = "url('sol2.png') no-repeat center center"
+    ovr.style.background = "#99badd url(alola.jpg) no-repeat center center fixed"
+  } else {
+    box1.style.background = "white"
+  }
+}
+
 // Events
 ball.addEventListener("click", shake);
 button.addEventListener("click", display);
@@ -44,6 +58,8 @@ basic2.addEventListener("mouseout", nanib);
 basic3.addEventListener("click", kartana);
 basic3.addEventListener("mouseover", anic);
 basic3.addEventListener("mouseout", nanic);
+input.addEventListener("keyup", search);
+input.addEventListener("keyup", xyz)
 
 // // Make the call
 function display() {
@@ -86,6 +102,17 @@ function kartana() {
   somePokemon1.stats()
 })
 box1.style.background = "pink url('ultforest.jpg') no-repeat center center"
+}
+function search(event) {
+  axios.get("http://fizal.me/pokeapi/api/v2/name/"+ input.value +".json")
+  .then(function (response) {
+  console.log(response.data);
+  let somePokemon = new Pokemon(response.data.id, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
+  somePokemon.sprites()
+  somePokemon.stats()
+})
+box1.style.background = "white"
+console.log(event.key);
 }
 class Pokemon {
   constructor(id, name, hp, attack, defense, spatk, spdef, speed, abilities) {
