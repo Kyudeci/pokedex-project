@@ -12,9 +12,12 @@ let basic3 = document.getElementById("pkmn3")
 
 function shake(){
   // ball.classList.add("shake")
-  document.getElementById("random").style.visibility = "visible"
+  button.style.visibility = "visible";
+  input.style.visibility = "visible";
+  submit.style.visibility = "visible"
   tripleball.classList.add("appear")
   ball.src = "masterball-open.png"
+  ball.style.visibility = "hidden"
 }
 function ani() {
   basic1.src = "pokeball-ani.gif"
@@ -34,7 +37,7 @@ function nanib() {
 function nanic() {
   basic3.src = "beastball.png"
 }
-function xyz(event) {
+function xyz() {
   if (input.value == "solgaleo") {
     box1.style.background = "url('sol2.png') no-repeat center center"
     ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
@@ -43,6 +46,7 @@ function xyz(event) {
     ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
   } else if (input.value == "pikachu") {
     ovr.style.background = "#ffd624 url(pikaw.png) no-repeat center center fixed"
+    zoro.src = "mimikyu.gif"
   } else {
     box1.style.background = "white"
   }
@@ -89,7 +93,7 @@ function lugia() {
   axios.get("http://fizal.me/pokeapi/api/v2/id/249.json")
   .then(function (response) {
   console.log(response.data);
-  let somePokemon1 = new Pokemon(249, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
+  let somePokemon1 = new Pokemon(249, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[i].ability.name);
   somePokemon1.sprites()
   somePokemon1.stats()
 })
@@ -105,7 +109,31 @@ function kartana() {
 })
 box1.style.background = "pink url('ultforest.jpg') no-repeat center center"
 }
-function search(event) {
+function search() {
+  let v = input.value
+  let w = v.replace('u ','u-')
+  if (input.value == "mimikyu") {
+    input.value = "mimikyu-disguised"
+  } else if (input.value == "tapu koko") {
+    input.value = w
+  } else if (input.value == "tapu fini") {
+    input.value = w
+  } else if (input.value == "tapu bulu") {
+    input.value = w
+  } else if (input.value == "tapu lele") {
+    input.value = w
+  } else if (input.value == "deoxys") {
+    input.value = "deoxys-normal"
+  } else if (input.value == "lycanroc") {
+    input.value = "lycanroc-midday"
+  } else if (input.value == "wishiwashi") {
+    input.value = "wishiwashi-solo"
+  } else if (input.value == "shaymin") {
+    input.value = "shaymin-land"
+  }
+  if (input.value == "giratina" ) {
+    input.value = "giratina-altered"
+  }
   axios.get("http://fizal.me/pokeapi/api/v2/name/"+ input.value +".json")
   .then(function (response) {
   console.log(response.data);
@@ -113,7 +141,8 @@ function search(event) {
   somePokemon.sprites()
   somePokemon.stats()
   if (response.data.id > 792 && response.data.id < 801) {
-    box1.style.background = "url(ultrawh.jpg) no-repeat left bottom fixed"
+    box1.style.background = "url(ultrawh.jpg) no-repeat center center"
+    ovr.style.background = "white url(UBart.png) no-repeat center center fixed"
   }
 })
 box1.style.background = "white"
@@ -142,7 +171,9 @@ class Pokemon {
     let spr = this.sprite
     let fix = spr.replace('-','')
     //Appear the sprite that leads to the future.
-    if (this.id < 721) {
+    if (this.id == 25) {
+      src.src == "https://play.pokemonshowdown.com/sprites/xyani/mimikyu-totem.gif"
+    } else if (this.id < 721) {
       src.src = "https://play.pokemonshowdown.com/sprites/xyani/"+ fix +".gif";
     } else {
       src.src = "https://play.pokemonshowdown.com/sprites/xyani/"+ fix +".gif"
@@ -158,9 +189,7 @@ class Pokemon {
     let spatk = document.createTextNode("Special Attack: " + this.spatk)
     let spdef = document.createTextNode("Special Defense: " + this.spdef)
     let speed = document.createTextNode("Speed: " + this.speed)
-    // let abi = document.createTextNode("Ability: " + this.ability1 + ", " + this.ability2 + ", " + this.ability3)
-    // let abi2 = document.createTextNode("Ability: " + this.abilities + ", " + this.abilities)
-    let abi3 = document.createTextNode("Ability: " + this.abilities)
+    let abi = document.createTextNode("Ability: " + this.abilities)
     let br = document.createElement("br")
     let br2 = document.createElement("br")
     let br3 = document.createElement("br")
@@ -185,9 +214,7 @@ class Pokemon {
     li.appendChild(br6)
     li.appendChild(speed)
     li.appendChild(br7)
-    // li.appendChild(abi)
-    // li.appendChild(abi2)
-    li.appendChild(abi3)
+    li.appendChild(abi)
   }
 }
 class Trainer {
@@ -197,10 +224,7 @@ class Trainer {
   all() {
 
   }
-  get(name){
+  get(name) {
 
   }
 }
-
-// Create search bar-- input
-// Secret codes, unsure if will make into final
