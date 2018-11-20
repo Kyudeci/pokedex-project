@@ -5,7 +5,7 @@ let box1 = document.getElementById("box")
 let zoro = document.getElementById('adjust')
 let input = document.querySelector('input');
 let ovr = document.querySelector("html")
-
+let submit = document.getElementById("submit")
 let basic1 = document.getElementById("pkmn1")
 let basic2 = document.getElementById("pkmn2")
 let basic3 = document.getElementById("pkmn3")
@@ -34,13 +34,15 @@ function nanib() {
 function nanic() {
   basic3.src = "beastball.png"
 }
-function xyz() {
+function xyz(event) {
   if (input.value == "solgaleo") {
     box1.style.background = "url('sol2.png') no-repeat center center"
-    ovr.style.background = "#99badd url(alola.jpg) no-repeat center center fixed"
+    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
   } else if (input.value == "lunala") {
     box1.style.background = "url('sol2.png') no-repeat center center"
-    ovr.style.background = "#99badd url(alola.jpg) no-repeat center center fixed"
+    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
+  } else if (input.value == "pikachu") {
+    ovr.style.background = "#ffd624 url(pikaw.png) no-repeat center center fixed"
   } else {
     box1.style.background = "white"
   }
@@ -58,8 +60,8 @@ basic2.addEventListener("mouseout", nanib);
 basic3.addEventListener("click", kartana);
 basic3.addEventListener("mouseover", anic);
 basic3.addEventListener("mouseout", nanic);
-input.addEventListener("keyup", search);
-input.addEventListener("keyup", xyz)
+submit.addEventListener("click", search);
+submit.addEventListener("click", xyz)
 
 // // Make the call
 function display() {
@@ -110,9 +112,11 @@ function search(event) {
   let somePokemon = new Pokemon(response.data.id, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
   somePokemon.sprites()
   somePokemon.stats()
+  if (response.data.id > 792 && response.data.id < 801) {
+    box1.style.background = "url(ultrawh.jpg) no-repeat left bottom fixed"
+  }
 })
 box1.style.background = "white"
-console.log(event.key);
 }
 class Pokemon {
   constructor(id, name, hp, attack, defense, spatk, spdef, speed, abilities) {

@@ -25,7 +25,7 @@ body {
   transform-origin: center bottom;
 }
 #color {
-  
+
 }
 /* Randomize button */
 .button {
@@ -56,6 +56,13 @@ input {
   left: 85%;
   top: 35%;
   padding: 5px;
+}
+#submit {
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 99%;
+  top: 35%;
+  padding: 5px
 }
 #display {
   position: fixed;
@@ -126,6 +133,53 @@ Snippet by Joanna Chan */
   animation: appear 1s forwards;
 
 }
-@media  {
-
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    #new {
+      width: 520px;
+      height: 520px;
+      position: fixed;
+      margin: -50px 0 0 -50px;
+      left: 32%;
+      top: 20%;
+      transform-origin: center bottom;
+    }
+    #display {
+      position: fixed;
+      margin: -50px 0 0 -50px;
+      left: 32%;
+      top: 35%;
+      opacity: 0;
+    }
+    input {
+      position: absolute;
+      margin: -50px 0 0 -50px;
+      left: 79%;
+      top: 10%;
+      padding: 10px;
+    }
+    #submit {
+      position: absolute;
+      margin: -50px 0 0 -50px;
+      left: 99%;
+      top: 10%;
+      padding: 10px;
+      font-weight: 600;
+    }
+    .button {
+      padding: 15px 25px;
+      font-size: 24px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: #fff;
+      background-color: black;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 9px #999;
+      position: absolute;
+      margin: -50px 0 0 -50px;
+      left: 10%;
+      top: 10%;
+      visibility: hidden;
+    }
 }
