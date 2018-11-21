@@ -57,7 +57,7 @@ button.addEventListener("click", display);
 basic1.addEventListener("click", zoroark);
 basic1.addEventListener("mouseover", ani);
 basic1.addEventListener("mouseout", nani);
-basic2.addEventListener("click", lugia);
+basic2.addEventListener("click", reshiram);
 basic2.addEventListener("mouseover", anib);
 basic2.addEventListener("mouseout", nanib);
 basic3.addEventListener("click", kartana);
@@ -88,15 +88,15 @@ function zoroark() {
 })
 box1.style.background = "black url('dark.gif') no-repeat center center"
 }
-function lugia() {
-  axios.get("https://fizal.me/pokeapi/api/v2/id/249.json")
+function reshiram() {
+  axios.get("https://fizal.me/pokeapi/api/v2/id/643.json")
   .then(function (response) {
   console.log(response.data);
-  let somePokemon1 = new Pokemon(249, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
+  let somePokemon1 = new Pokemon(643, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
   somePokemon1.sprites()
   somePokemon1.stats()
 })
-box1.style.background = "url('water.gif')"
+box1.style.background = "url('flame.gif')"
 }
 function kartana() {
   axios.get("https://fizal.me/pokeapi/api/v2/id/798.json")

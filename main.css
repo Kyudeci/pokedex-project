@@ -24,6 +24,12 @@ body {
   top: 20%;
   transform-origin: center bottom;
 }
+#N {
+  position: fixed;
+  margin: -50px 0 0 -50px;
+  left: 15%;
+  top: 20%;
+}
 #color {
 
 }
