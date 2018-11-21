@@ -16,26 +16,26 @@ function shake(){
   input.style.visibility = "visible";
   submit.style.visibility = "visible"
   tripleball.classList.add("appear")
-  ball.src = "masterball-open.png"
+  ball.src = "Masterball-open.png"
   ball.style.visibility = "hidden"
 }
 function ani() {
-  basic1.src = "pokeball-ani.gif"
+  basic1.src = "Pokeball-ani.gif"
 }
 function anib() {
-  basic2.src = "ultraball-ani.gif"
+  basic2.src = "Ultraball-ani.gif"
 }
 function anic() {
-  basic3.src = "beastball-ani.gif"
+  basic3.src = "Beastball-ani.gif"
 }
 function nani() {
-  basic1.src = "pokeball2.png"
+  basic1.src = "Pokeball2.png"
 }
 function nanib() {
-  basic2.src = "ultraball.png"
+  basic2.src = "Ultraball.png"
 }
 function nanic() {
-  basic3.src = "beastball.png"
+  basic3.src = "Beastball.png"
 }
 function xyz() {
   if (input.value == "solgaleo") {
