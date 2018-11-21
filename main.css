@@ -89,6 +89,7 @@ input {
   padding-top: 25px;
   padding-right: 0px;
   padding-left: 25px;
+  object-fit: contain;
 }
 #box2 {
   border: solid thick;

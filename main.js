@@ -14,41 +14,40 @@ function shake(){
   // ball.classList.add("shake")
   button.style.visibility = "visible";
   input.style.visibility = "visible";
-  submit.style.visibility = "visible"
-  tripleball.classList.add("appear")
-  ball.src = "Masterball-open.png"
-  ball.style.visibility = "hidden"
+  submit.style.visibility = "visible";
+  tripleball.classList.add("appear");
+  ball.style.visibility = "hidden";
 }
 function ani() {
-  basic1.src = "Pokeball-ani.gif"
+  basic1.src = "Pokeball-ani.gif";
 }
 function anib() {
-  basic2.src = "Ultraball-ani.gif"
+  basic2.src = "Ultraball-ani.gif";
 }
 function anic() {
-  basic3.src = "Beastball-ani.gif"
+  basic3.src = "Beastball-ani.gif";
 }
 function nani() {
-  basic1.src = "Pokeball2.png"
+  basic1.src = "Pokeball2.png";
 }
 function nanib() {
-  basic2.src = "Ultraball.png"
+  basic2.src = "Ultraball.png";
 }
 function nanic() {
-  basic3.src = "Beastball.png"
+  basic3.src = "Beastball.png";
 }
 function xyz() {
   if (input.value == "solgaleo") {
-    box1.style.background = "url('sol2.png') no-repeat center center"
-    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
+    box1.style.background = "url('sol2.png') no-repeat center center";
+    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed";
   } else if (input.value == "lunala") {
-    box1.style.background = "url('sol2.png') no-repeat center center"
-    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed"
+    box1.style.background = "url('sol2.png') no-repeat center center";
+    ovr.style.background = "#033e50 url(alola.jpg) no-repeat center center fixed";
   } else if (input.value == "pikachu") {
-    ovr.style.background = "#ffd624 url(pikaw.png) no-repeat center center fixed"
-    zoro.src = "mimikyu.gif"
+    ovr.style.background = "#ffd624 url(pikaw.png) no-repeat center center fixed";
+    zoro.src = "mimikyu.gif";
   } else {
-    box1.style.background = "white"
+    box1.style.background = "white";
   }
 }
 
@@ -70,7 +69,7 @@ submit.addEventListener("click", xyz)
 // // Make the call
 function display() {
   let x = Math.floor(Math.random() * 802) + 1
-  axios.get("http://fizal.me/pokeapi/api/v2/id/"+ x +".json")
+  axios.get("https://fizal.me/pokeapi/api/v2/id/"+ x +".json")
   .then(function (response) {
   console.log(response.data);
   let somePokemon = new Pokemon(x, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
@@ -80,7 +79,7 @@ function display() {
 box1.style.background = "white"
 }
 function zoroark() {
-  axios.get("http://fizal.me/pokeapi/api/v2/id/571.json")
+  axios.get("https://fizal.me/pokeapi/api/v2/id/571.json")
   .then(function (response) {
   console.log(response.data);
   let somePokemon1 = new Pokemon(571, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
@@ -90,17 +89,17 @@ function zoroark() {
 box1.style.background = "black url('dark.gif') no-repeat center center"
 }
 function lugia() {
-  axios.get("http://fizal.me/pokeapi/api/v2/id/249.json")
+  axios.get("https://fizal.me/pokeapi/api/v2/id/249.json")
   .then(function (response) {
   console.log(response.data);
-  let somePokemon1 = new Pokemon(249, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[i].ability.name);
+  let somePokemon1 = new Pokemon(249, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
   somePokemon1.sprites()
   somePokemon1.stats()
 })
 box1.style.background = "url('water.gif')"
 }
 function kartana() {
-  axios.get("http://fizal.me/pokeapi/api/v2/id/798.json")
+  axios.get("https://fizal.me/pokeapi/api/v2/id/798.json")
   .then(function (response) {
   console.log(response.data);
   let somePokemon1 = new Pokemon(798, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
@@ -134,7 +133,7 @@ function search() {
   if (input.value == "giratina" ) {
     input.value = "giratina-altered"
   }
-  axios.get("http://fizal.me/pokeapi/api/v2/name/"+ input.value +".json")
+  axios.get("https://fizal.me/pokeapi/api/v2/name/"+ input.value +".json")
   .then(function (response) {
   console.log(response.data);
   let somePokemon = new Pokemon(response.data.id, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
