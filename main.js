@@ -22,7 +22,7 @@ function ani() {
   basic1.src = "Pokeball-ani.gif";
 }
 function anib() {
-  basic2.src = "Ultraball-ani.gif";
+  basic2.src = "Reshiramball-ani.gif";
 }
 function anic() {
   basic3.src = "Beastball-ani.gif";
@@ -31,7 +31,7 @@ function nani() {
   basic1.src = "Pokeball2.png";
 }
 function nanib() {
-  basic2.src = "Ultraball.png";
+  basic2.src = "Reshiramball.png";
 }
 function nanic() {
   basic3.src = "Beastball.png";
@@ -64,14 +64,13 @@ basic3.addEventListener("click", kartana);
 basic3.addEventListener("mouseover", anic);
 basic3.addEventListener("mouseout", nanic);
 submit.addEventListener("click", search);
-submit.addEventListener("click", xyz)
+submit.addEventListener("click", xyz);
 
 // // Make the call
 function display() {
   let x = Math.floor(Math.random() * 802) + 1
   axios.get("https://fizal.me/pokeapi/api/v2/id/"+ x +".json")
   .then(function (response) {
-  console.log(response.data);
   let somePokemon = new Pokemon(x, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
   somePokemon.sprites()
   somePokemon.stats()
@@ -81,7 +80,6 @@ box1.style.background = "white"
 function zoroark() {
   axios.get("https://fizal.me/pokeapi/api/v2/id/571.json")
   .then(function (response) {
-  console.log(response.data);
   let somePokemon1 = new Pokemon(571, response.data.species.name, response.data.stats[5].base_stat, response.data.stats[4].base_stat, response.data.stats[3].base_stat, response.data.stats[2].base_stat, response.data.stats[1].base_stat, response.data.stats[0].base_stat, response.data.abilities[0].ability.name);
   somePokemon1.sprites()
   somePokemon1.stats()
@@ -110,17 +108,18 @@ box1.style.background = "pink url('ultforest.jpg') no-repeat center center"
 }
 function search() {
   let v = input.value
-  let w = v.replace('u ','u-')
+  let w = v.replace('oo','o-o')
+  let wt = v.replace('s','s-incarnate')
   if (input.value == "mimikyu") {
     input.value = "mimikyu-disguised"
-  } else if (input.value == "tapu koko") {
-    input.value = w
-  } else if (input.value == "tapu fini") {
-    input.value = w
-  } else if (input.value == "tapu bulu") {
-    input.value = w
-  } else if (input.value == "tapu lele") {
-    input.value = w
+  } else if (input.value == "tapu koko" || input.value == "tapukoko") {
+    input.value = "tapu-koko"
+  } else if (input.value == "tapu fini" || input.value == "tapufini") {
+    input.value = "tapu-fini"
+  } else if (input.value == "tapu bulu" || input.value == "tapubulu") {
+    input.value = "tapu-bulu"
+  } else if (input.value == "tapu lele" || input.value == "tapulele") {
+    input.value = "tapu-lele"
   } else if (input.value == "deoxys") {
     input.value = "deoxys-normal"
   } else if (input.value == "lycanroc") {
@@ -129,9 +128,46 @@ function search() {
     input.value = "wishiwashi-solo"
   } else if (input.value == "shaymin") {
     input.value = "shaymin-land"
-  }
-  if (input.value == "giratina" ) {
+  } else if (input.value == "aegislash") {
+    input.value = "aegislash-shield"
+  } else if (input.value == "basculin") {
+    input.value = "basculin-red-striped"
+  } else if (input.value == "darmanitan") {
+    input.value = "darmanitan-standard"
+  } else if (input.value == "gourgeist") {
+    input.value = "gourgeist-average"
+  } else if (input.value == "pumpkaboo") {
+    input.value = "pumpkaboo-average"
+  } else if (input.value == "hakomoo" || input.value == "jangmoo" || input.value == "kommoo" ) {
+    input.value = w
+  } else if (input.value == "keldeo") {
+    input.value = "keldeo-ordinary"
+  } else if (input.value == "meloetta") {
+    input.value = "meloetta-aria"
+  } else if (input.value == "meowstic") {
+    input.value = "meowstic-male"
+  } else if (input.value == "mimejr" || input.value == "mime jr") {
+    input.value = "mime-jr"
+  } else if (input.value == "minior") {
+    input.value = "minior-red-meteor"
+  } else if (input.value == "mrmime" || input.value == "mr mime") {
+    input.value = "mr-mime"
+  } else if (input.value == "oricorio") {
+    input.value = "oricorio-baile"
+  } else if (input.value == "porygonz") {
+    input.value = "porygon-z"
+  } else if (input.value == "giratina" ) {
     input.value = "giratina-altered"
+  } else if (input.value == "thundurus" ) {
+    input.value = wt
+  } else if (input.value == "tornadus" ) {
+    input.value = wt
+  } else if (input.value == "landorus" ) {
+    input.value = wt
+  } else if (input.value == "typenull" ) {
+    input.value = "type-null"
+  } else if (input.value == "wormadam" ) {
+    input.value = "wormadam-plant"
   }
   axios.get("https://fizal.me/pokeapi/api/v2/name/"+ input.value +".json")
   .then(function (response) {
@@ -144,7 +180,8 @@ function search() {
     ovr.style.background = "white url(UBart.png) no-repeat center center fixed"
   }
 })
-box1.style.background = "white"
+box1.style.background = "white";
+input.value = ""
 }
 class Pokemon {
   constructor(id, name, hp, attack, defense, spatk, spdef, speed, abilities) {
@@ -157,14 +194,11 @@ class Pokemon {
     this.spdef = spdef;
     this.speed = speed;
     this.abilities = abilities;
-    // this.ability1 = ability1;
-    // this.ability2 = ability2;
-    // this.ability3 = ability3;
     this.sprite = this.name;
   }
   sprites() {
-    let src = document.getElementById('adjust')
-    let box = document.getElementById("box")
+    let src = document.getElementById("adjust");
+    let box = document.getElementById("box");
     src.id = "adjust"
     box.appendChild(src)
     let spr = this.sprite
@@ -172,11 +206,14 @@ class Pokemon {
     //Appear the sprite that leads to the future.
     if (this.id == 25) {
       src.src == "https://play.pokemonshowdown.com/sprites/xyani/mimikyu-totem.gif"
-    } else if (this.id < 721) {
-      src.src = "https://play.pokemonshowdown.com/sprites/xyani/"+ fix +".gif";
     } else {
       src.src = "https://play.pokemonshowdown.com/sprites/xyani/"+ fix +".gif"
     }
+    let audino = document.getElementById("cry");
+    audino.autoplay = true;
+    let body = document.querySelector("body");
+    let cry = "https://play.pokemonshowdown.com/audio/cries/"+ fix +".mp3"
+    audino.src = cry
   }
   stats() {
     let li = document.createElement("li");
