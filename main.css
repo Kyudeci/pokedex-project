@@ -24,12 +24,6 @@ body {
   top: 20%;
   transform-origin: center bottom;
 }
-#N {
-  position: fixed;
-  margin: -50px 0 0 -50px;
-  left: 15%;
-  top: 20%;
-}
 #color {
 
 }
@@ -95,7 +89,29 @@ input {
   padding-top: 25px;
   padding-right: 0px;
   padding-left: 25px;
+  padding-bottom: 0px;
   object-fit: contain;
+}
+#transform {
+  position: absolute;
+  margin: -50px 0 0 -50px;
+  left: 5%;
+  top: 100%;
+}
+.vis {
+  visibility: hidden;
+}
+#form {
+  background-color: #C0C0C0;
+  border-radius: 50%;
+}
+#shinkaX {
+  background-color: #0047AB;
+  border-radius: 50%;
+}
+#shinkaY {
+  background-color: #DC143C;
+  border-radius: 50%;
 }
 #box2 {
   border: solid thick;
