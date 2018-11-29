@@ -337,9 +337,17 @@ class Trainer {
     this.pokemon = []
   }
   all() {
-
+    zoroark()
+    reshiram()
+    kartana()
   }
   get(name) {
-
+    if (name == "zoroark") {
+      zoroark()
+    } else if (name == "reshiram") {
+      reshiram()
+    } else if (name == "kartana") {
+      kartana()
+    }
   }
 }
